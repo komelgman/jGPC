@@ -6,7 +6,7 @@ License
 Distributed under the LGPLv3 License. Copyright (c) 2013 Sergey Yungman (aka komelgman)
 
 
-Exmaple
+Example
 -------
 
 ```Java
