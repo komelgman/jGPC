@@ -16,9 +16,6 @@
 
 package kom.geometry.core;
 
-/**
- * Contains data about on some common geometric object
- */
 public class Geometry {
 
     /**
