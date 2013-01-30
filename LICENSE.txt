@@ -1,0 +1,4 @@
+stub
+
+License for binding LGPLv3
+License for library src ... proprietary
