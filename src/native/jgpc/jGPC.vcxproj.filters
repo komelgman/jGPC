@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\gpc">
+      <UniqueIdentifier>{4f4b2a23-a4f8-451d-9e89-16dee5d8e4c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\jgpc">
+      <UniqueIdentifier>{8cf83d96-61dd-44ef-8cab-2567511b8fa3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gpc">
+      <UniqueIdentifier>{b1b640a5-aa0c-43c8-b4f7-4b8d27a98f33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\jgpc">
+      <UniqueIdentifier>{939b3bc8-456a-4822-b0f8-d4be397afa07}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src/gpc/gpc.h">
+      <Filter>Header Files\gpc</Filter>
+    </ClInclude>
+    <ClInclude Include="src/jgpc/GeometryTransfer.h">
+      <Filter>Header Files\jgpc</Filter>
+    </ClInclude>
+    <ClInclude Include="src/jgpc/GpcPolygon.h">
+      <Filter>Header Files\jgpc</Filter>
+    </ClInclude>
+    <ClInclude Include="src/jgpc/GpcTriStrips.h">
+      <Filter>Header Files\jgpc</Filter>
+    </ClInclude>
+    <ClInclude Include="src/jgpc/InitialData.h">
+      <Filter>Header Files\jgpc</Filter>
+    </ClInclude>
+    <ClInclude Include="src/jgpc/jgpc.h">
+      <Filter>Header Files\jgpc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\jgpc\jni_tools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src/gpc/gpc.c">
+      <Filter>Source Files\gpc</Filter>
+    </ClCompile>
+    <ClCompile Include="src/jgpc/GeometryTransfer.cpp">
+      <Filter>Source Files\jgpc</Filter>
+    </ClCompile>
+    <ClCompile Include="src/jgpc/GpcPolygon.cpp">
+      <Filter>Source Files\jgpc</Filter>
+    </ClCompile>
+    <ClCompile Include="src/jgpc/GpcTriStrips.cpp">
+      <Filter>Source Files\jgpc</Filter>
+    </ClCompile>
+    <ClCompile Include="src/jgpc/initialData.cpp">
+      <Filter>Source Files\jgpc</Filter>
+    </ClCompile>
+    <ClCompile Include="src/jgpc/jgpc.cpp">
+      <Filter>Source Files\jgpc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\jgpc\jni_tools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
