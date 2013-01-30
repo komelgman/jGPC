@@ -1,4 +1,30 @@
-stub
+This project contains original GPC library and binding source code.
 
-License for binding LGPLv3
-License for library src ... proprietary
+GPC Licensing
+
+GPC is free for downloading and time-unlimited evaluation by anyone.
+
+Non-commercial use of GPC (for example: private / hobbyist / education)
+GPC is free for non-commercial use only.
+
+Commercial use of GPC (for example: product development / commercial research)
+If you wish to use GPC in support of a commercial product,
+you must obtain an official GPC Commercial Use Licence from The University of Manchester.
+Please email for details to <toby.howard@manchester.ac.uk>.
+
+
+
+jGPC Licensing
+
+Licensed under the LGPL Version 3.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.gnu.org/copyleft/lesser.html
+  <project-root>/LICENSE-LGPLv3.txt
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
