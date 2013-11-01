@@ -41,10 +41,14 @@ public final class GeometryTransfer {
     }
 
     public void set(Geometry[] geometries, GeometryState state) {
-        setAs(Arrays.asList(geometries), state);
+        set(Arrays.asList(geometries), state);
     }
 
-    public synchronized void setAs(Collection<Geometry> geometries, GeometryState state) {
+    public void set(TransferableGeometry data) {
+        set(data.getGeometries(), data.getState());
+    }
+
+    public synchronized void set(Collection<Geometry> geometries, GeometryState state) {
         if (objCPtr != 0) {
             free();
         }
@@ -74,10 +78,6 @@ public final class GeometryTransfer {
         this.state = state;
     }
 
-    public void set(TransferableGeometry data) {
-        setAs(data.getGeometries(), data.getState());
-    }
-
     public Geometry[] get() {
         if (objCPtr == 0) {
             return new Geometry[]{};
@@ -88,8 +88,8 @@ public final class GeometryTransfer {
 
     @Override
     protected void finalize() throws Throwable {
-        super.finalize();
         free();
+        super.finalize();
     }
 
     public synchronized void free() {

@@ -30,7 +30,12 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *pvt) {
 		return 0;
 	}
 
-	class_Geometry = env->FindClass(CLASS_GEOMETRY);
+	jclass class_Geometry_localRef = env->FindClass(CLASS_GEOMETRY);
+	if (env->ExceptionOccurred()) {
+		return NULL;
+	}
+
+	class_Geometry = (jclass)env->NewGlobalRef(class_Geometry_localRef);
 	if (env->ExceptionOccurred()) {
 		return NULL;
 	}

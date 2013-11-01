@@ -22,40 +22,47 @@ import kom.geometry.core.TransferableGeometry;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+
+import static java.util.Arrays.asList;
+import static kom.geometry.core.Geometry.createContour;
+import static kom.geometry.core.Geometry.createHole;
 
 /**
  * Simple wrapper for building gpc polygon structure
  */
-public class GpcPolygon extends ArrayList<Geometry> implements TransferableGeometry {
+public class GpcPolygon implements TransferableGeometry {
 
-    public GpcPolygon addContour(double[] vertices) {
-        add(createContour(vertices));
+    final List<Geometry> geometries;
+
+    public GpcPolygon() {
+        this(new Geometry[0]);
+    }
+
+    public GpcPolygon(Geometry ... geometry) {
+        geometries = new ArrayList<Geometry>(asList(geometry));
+    }
+
+    public GpcPolygon addContour(double ... vertices) {
+        geometries.add(createContour(vertices));
 
         return this;
     }
 
-    public GpcPolygon addHole(double[] vertices) {
-        add(createHole(vertices));
+    public GpcPolygon addHole(double ... vertices) {
+        geometries.add(createHole(vertices));
 
         return this;
-    }
-
-    public static Geometry createContour(double[] vertices) {
-        return new Geometry(vertices, 0);
-    }
-
-    public static Geometry createHole(double[] vertices) {
-        return new Geometry(vertices, 1);
     }
 
     @Override
     public Collection<Geometry> getGeometries() {
-        return this;
+        return geometries;
     }
 
     @Override
     public GeometryState getState() {
-        return this.size() == 0
+        return geometries.size() == 0
                 ? GeometryState.Empty
                 : GeometryState.GpcPoly;
     }

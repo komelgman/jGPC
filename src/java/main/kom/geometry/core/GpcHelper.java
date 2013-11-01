@@ -18,7 +18,7 @@ package kom.geometry.core;
 
 public class GpcHelper {
     public static GeometryTransfer triangulate(GeometryTransfer subject) {
-        validGpcPoly(subject);
+        validateGpcPoly(subject);
 
         long pointer = jni.Gpc_triangulate(subject.objCPtr);
         GeometryState state = GeometryState.GpcTriStrips;
@@ -29,8 +29,8 @@ public class GpcHelper {
 
     public static GeometryTransfer polygonClip(int operation, GeometryTransfer subject,
             GeometryTransfer clip, boolean returnAsTriStrips) {
-        validGpcPoly(subject);
-        validGpcPoly(clip);
+        validateGpcPoly(subject);
+        validateGpcPoly(clip);
 
         long pointer = jni.Gpc_polygonClip(operation, subject.objCPtr, clip.objCPtr, returnAsTriStrips);
         GeometryState state = (returnAsTriStrips)
@@ -40,7 +40,7 @@ public class GpcHelper {
         return new GeometryTransfer(pointer, state);
     }
 
-    private static void validGpcPoly(GeometryTransfer transfer) {
+    private static void validateGpcPoly(GeometryTransfer transfer) {
         if (transfer.state != GeometryState.GpcPoly) {
             throw new IllegalStateException("GeometryTransfer must be in GpcPoly state");
         }

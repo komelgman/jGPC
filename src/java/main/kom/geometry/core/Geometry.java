@@ -16,7 +16,12 @@
 
 package kom.geometry.core;
 
+import java.util.Arrays;
+
 public class Geometry {
+
+    public static int TAG_CONTOUR = 0;
+    public static int TAG_HOLE = 1;
 
     /**
      * vertex data {x0, y0, x1, y1 ...}
@@ -24,28 +29,25 @@ public class Geometry {
     double[] vertices = null;
 
     /**
-     * Some specific data. For GPC algorithm it is hole flag in input polygons
+     * Some specific data.
+     * For GPC algorithm it is hole flag in input polygons
      */
-    int tag = 0;
+    int tag = TAG_CONTOUR;
 
     public Geometry() {
-        super();
-    }
-
-    public Geometry(double[] vertices) {
-        super();
-
-        setVerticesData(vertices);
+        // jni
     }
 
     public Geometry(double[] vertices, int tag) {
-        super();
-
         setVerticesData(vertices, tag);
     }
 
-    public void setVerticesData(double[] vertices) {
-        setVerticesData(vertices, 0);
+    public static Geometry createContour(double ... vertices) {
+        return new Geometry(vertices, TAG_CONTOUR);
+    }
+
+    public static Geometry createHole(double ... vertices) {
+        return new Geometry(vertices, TAG_HOLE);
     }
 
     public void setVerticesData(double[] vertices, int tag) {

@@ -109,7 +109,7 @@ void GpcPolygon_extractTo(JNIEnv *env, gpc_polygon *data, jobjectArray result) {
 		for (int v = 0, k = 0; v < data->contour[i].num_vertices; ++v) {
 			c_tmpVertices[k++] = data->contour[i].vertex[v].x;
 			c_tmpVertices[k++] = data->contour[i].vertex[v].y;
-		}
+		}		
 		env->ReleasePrimitiveArrayCritical(tmpVertices, (void*)c_tmpVertices, 0);
 
 		jobject geometry = env->NewObject(class_Geometry, ctor_Geometry, tmpVertices, data->hole[i]);
