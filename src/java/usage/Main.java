@@ -36,7 +36,7 @@ public class Main {
     public static void main(String[] args) {
         final JFrame frame = new JFrame();
 
-        opResult = new GpcPolygon(Gpc.clip(GpcOperation.UNION, poly1, poly2).get());
+        opResult = new GpcPolygon(Gpc.clip(GpcOperation.DIFF, poly1, poly2).get());
 
         ActionListener opListener = new ActionListener() {
             @Override
